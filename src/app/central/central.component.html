@@ -1,0 +1,69 @@
+<div class="profile">
+  <br>
+  <div class="section-title text-center text-uppercase">
+    <h3> Central Universities</h3>
+  </div>
+  <div class="container row" style="margin-left:280px;">
+  <div id="custom-search-input col-sm-6">
+      <div class="input-group col-md-8">
+          <input type="text" class="form-control input-lg" [(ngModel)]="search" placeholder="Search" />
+          
+      </div>
+  </div>
+</div>
+<br><br>
+<div class="row">
+  <ul id="filters" class="list-inline">
+    
+          <li><span class="filter active" (click)="getdata()">All</span></li>
+          <li><span class="filter" (click)="ten()" >Top 10</span></li>    
+  </ul>
+</div>
+</div>
+<section class="section container">
+    <div class="col-sm-3 well">
+      <h4><i class="fa fa-filter">  Filter </i></h4>  
+      <hr>
+      <form [formGroup]="filterForm">
+      <h4>Location</h4>
+      <div class="anyClass">
+      <div class="checkbox" *ngFor="let s of str">
+      <label><input type="checkbox" [formControlName]="s.s_id"  [checked]="false" (change)="editcheck(s.s_id)" > {{s.s_name}}</label>
+      </div>
+      </div>
+      <hr>
+      <h4>Course</h4>
+      <div class="anyClass">
+      <div class="checkbox" *ngFor="let c of course">
+        <label><input type="checkbox" formControlName="c_id"> {{c.c_name}}</label>
+      </div>
+      </div>
+    </form>
+      
+   </div>
+   <div class="col-sm-1"></div>
+    
+   <div class="col-sm-8 well">
+    <br>
+    <br>
+    <div *ngFor="let u of uni | filter:search">
+      <div class="media ">
+        <div class="media-left media-top col-sm-12" >
+          <img src="../../assets/images/icon/{{u.icon}}" class="media-object col-sm-6" 
+          style="width:100px;height:50px;">
+          <h4 class="media-heading col-sm-8">{{u.u_name}}</h4>
+        </div>
+        <div class="media-body col-sm-8">
+          <br>
+          <p>{{u.city}},{{u.s_name}}</p>
+          <p>{{u.email}}</p>
+          <p>{{u.c_name}}</p>
+          <p>{{u.rating}}</p>
+        </div>
+      </div>
+      <hr>
+      </div>
+      </div>
+
+      
+  </section>

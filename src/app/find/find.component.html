@@ -1,0 +1,49 @@
+<div class="profile">
+  <br>
+  <br>
+  <div class="section-title text-center text-uppercase">
+    <h3>Find Profiles</h3>
+  </div>
+  <div class="container row" style="margin-left:280px;">
+      <!-- <form class="example-form">
+          <mat-form-field class="example-full-width">
+            <input matInput class="form-control" [matAutocomplete]="auto" [formControl]="searchCtrl">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let user of filteredSearch | async" [value]="user.f_name">
+                <span>{{ user.f_name }}</span>
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+        
+        </form> -->
+    <form [formGroup]="searchForm">
+  <div id="custom-search-input col-sm-6">
+      <div class="input-group col-md-8">
+          <input type="text" class="form-control input-lg" formControlName="search" placeholder="Search" />
+          <span class="input-group-btn">
+            <button class="btn btn-danger btn-lg" (click)="search()">
+                <i class="glyphicon glyphicon-search"></i>
+            </button>
+        </span>
+      </div>
+  </div>
+</form>
+</div>
+<br><br>
+ </div>
+
+ <section class="section container">
+
+    <div class="container">
+     <div class="row">      
+        <div class="col-sm-3" *ngFor="let u of user">
+            <div class="well">
+            <h4><a>{{u.f_name}} {{u.l_name}}</a></h4>
+            <h4>{{u.email}} </h4>
+        </div>
+        </div>
+        <br>
+    </div>
+</div>
+</section>
+

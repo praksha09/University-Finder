@@ -1,0 +1,12 @@
+
+.simpleEditorContainer .control-btn {
+	border: 0px solid transparent;
+	background: lightgrey;
+	outline: none;
+	cursor: pointer;
+	block-size: 50px;
+}
+
+.control-btn.active {
+	background: grey;
+}

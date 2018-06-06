@@ -1,0 +1,45 @@
+
+<div class="video-w3l" data-vide-bg="assets/video/1">
+  <div style="position: absolute; z-index: -1; top: 0px; left: 0px; bottom: 0px; right: 0px; overflow: hidden;  background-repeat: no-repeat; background-position: 50% 50%; background-image: none;">
+      <video autoplay="" loop="" style="margin: auto; position: absolute; z-index: -1; top: 50%; left: 50%; transform: translate(-50%, -50%); visibility: visible; width: auto; height: 900px;">
+        <source src="assets/video/1.mp4" type="video/mp4">
+        <source src="assets/video/1.webm" type="video/webm">
+        <source src="assets/video/1.ogv" type="video/ogg">
+        </video>
+    </div>
+  <div class="main-content-agile">
+    <div class="sub-main-w3">
+      <h2>Login Here
+        <i class="fa fa-hand-o-down" aria-hidden="true"></i>
+      </h2>
+      <form action="#" method="post" class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onFormSubmit()">
+        <b><div class="text-danger" *ngIf="loginForm.controls.email.invalid && loginForm.controls.email.touched">Required Field</div></b>
+        <div class="pom-agile">
+          <span class="fa fa-user-o" aria-hidden="true"></span>
+          <input placeholder="Username" formControlName="email" class="user" type="text">
+         
+        </div>
+        <b><div class="text-danger" *ngIf="loginForm.controls.pwd.invalid && loginForm.controls.pwd.touched">Required Field</div></b>
+        <div class="pom-agile">
+          <span class="fa fa-key" aria-hidden="true"></span>
+          <input placeholder="Password" formControlName="pwd" class="pass" type="password">
+          
+        </div>
+        <div class="sub-w3l">
+          <div class="sub-agile">
+            <input type="checkbox" id="brand1" value="true" formControlName="rememberMe" [checked]="true" (change)="checked()">
+            <label for="brand1">
+              <span></span>Remember me</label>
+          </div>
+          <!-- <a href="#">Forgot Password?</a> -->
+          <div class="clear"></div>
+        </div>
+        <div class="right-w3l">
+          <input type="submit" value="Login">
+        </div>
+        <div style="color: white"><h5><b>Create new account? <a style="color:aliceblue;" routerLink='/signup'>SignUp</a></b></h5></div>
+      </form>
+    </div>
+  </div>
+  <!--//main-->
+</div>

@@ -1,0 +1,114 @@
+<section class="section container" >
+  <div class="section-title text-center text-uppercase">
+    <h2 class="underlined">ADD PROFILE</h2>
+  </div>
+  <form [formGroup]="profileForm" >
+  <div class="container" style="align-items: center">
+      
+  <div class="container col-sm-8">
+    <h3>Personal Details</h3>
+    <hr>
+    <div class="row">
+    <div class="col-sm-6">
+      <label>Father's Name:</label>
+      <input type="text" class="form-control" placeholder="" formControlName="father_name">
+      <b><div class="text-danger" *ngIf="profileForm.controls.father_name.invalid && profileForm.controls.father_name.touched">Enter Name</div></b>
+    </div>
+    
+    <div class="col-sm-6">
+        <label>Mother's Name</label>
+        <input type="text" class="form-control" placeholder="" formControlName="mother_name">
+        <b><div class="text-danger" *ngIf="profileForm.controls.mother_name.invalid && profileForm.controls.mother_name.touched">Enter Name</div></b>
+    </div>
+  </div>
+  <br>
+  <div class="row">
+      <div class="col-sm-6">
+          <label>Date of Birth</label>
+          <input type="date" class="form-control" placeholder="" formControlName="dob">
+          <b><div class="text-danger" *ngIf="profileForm.controls.dob.invalid && profileForm.controls.dob.touched">Enter Name</div></b>
+      </div>
+    <div class="col-sm-6">
+      <label>Address:</label>
+      <input type="text" class="form-control" placeholder="Enter your current address" formControlName="address">
+      <b><div class="text-danger" *ngIf="profileForm.controls.address.invalid && profileForm.controls.address.touched">Enter address</div></b>
+    </div>  
+    </div>
+    <br>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <label>City:</label>
+      <input type="text" class="form-control" placeholder="Enter city " formControlName="city">
+      <b><div class="text-danger" *ngIf="profileForm.controls.city.invalid && profileForm.controls.city.touched">Select city</div></b>
+    </div>  
+    <div class="col-sm-6">
+      <label>State:</label>
+      <input type="text" class="form-control" placeholder="Enter state" formControlName="state">
+      <b><div class="text-danger" *ngIf="profileForm.controls.state.invalid && profileForm.controls.state.touched">Select state</div></b>
+    </div>
+    </div>
+  </div>
+  <br>
+  <br>
+<div class="container col-sm-8">
+  <h3>School Details</h3>
+  <hr>
+  <div class="row">
+  <div class="col-sm-6">
+    <label>School Name:</label>
+    <input type="text" class="form-control" placeholder="Enter School Name" formControlName="school_name">
+    <b><div class="text-danger" *ngIf="profileForm.controls.school_name.invalid && profileForm.controls.school_name.touched">Enter School Name</div></b>
+  </div>
+  <div class="col-sm-6">
+      <label>Score:</label>
+      <input type="text" class="form-control" placeholder="Enter your XII percentage" formControlName="percentage">
+      <b><div class="text-danger" *ngIf="profileForm.controls.percentage.invalid && profileForm.controls.percentage.touched">Enter Marks</div></b>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <label>Year:</label>
+    <input type="text" class="form-control" placeholder="Year of Passing" formControlName="passing_year">
+    <b><div class="text-danger" *ngIf="profileForm.controls.passing_year.invalid && profileForm.controls.passing_year.touched">Enter Year</div></b>
+  </div>  
+</div>
+</div>
+<br>
+<br>
+<div class="container col-sm-8">
+  <h3>Interest for Graduation</h3>
+  <hr>
+  <div class="row">
+  <div class="col-sm-6">
+    <label>Interested Course:</label>
+    <input type="dropdown" class="form-control" placeholder="Choose course of your choice" formControlName="course">
+    <b><div class="text-danger" *ngIf="profileForm.controls.course.invalid && profileForm.controls.course.touched">Enter Course</div></b>
+  </div>
+  <div class="col-sm-6">
+      <label>Dream University:</label>
+      <input type="text" class="form-control" placeholder="Enter your dream university" formControlName="dream_uni">
+      <b><div class="text-danger" *ngIf="profileForm.controls.dream_uni.invalid && profileForm.controls.dream_uni.touched">Enter Name</div></b>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="col-sm-6">
+    <label>Year:</label>
+    <input type="text" class="form-control" placeholder="Year of joining" formControlName="joining_year">
+    <b><div class="text-danger" *ngIf="profileForm.controls.joining_year.invalid && profileForm.controls.joining_year.touched">Enter Year</div></b>
+  </div>  
+</div>
+</div>
+</div>
+
+<br>
+<div class="col-sm-2">
+  <button *ngIf="profileForm.controls.user_id.value!=''" (click)="update()" class="btn btn-warning">Update</button>
+  <button *ngIf="profileForm.controls.user_id.value==''" class="btn btn-primary" (click)="onFormSubmit()">Save Profile</button>
+</div>
+
+</form>
+
+</section>

@@ -1,0 +1,60 @@
+<section class="section container-fluid" id="contact">
+    <div class="section-title text-center text-uppercase">
+      <h3 class="underlined">Compare Universities</h3>
+    </div>
+    
+    <div class="container">
+      <form [formGroup]="compareForm">
+    <div id="custom-search-input">
+      <div class="input-group col-md-6" style="align-items: center">
+            <select class="form-control" formControlName="u_name1">
+                <option *ngFor="let u of uni" [value]="u.u_id">{{u.u_name}}</option>
+            </select>
+      </div>
+  </div>
+  <h4 style="color: gray">OR</h4>
+  <div id="custom-search-input">
+        <div class="input-group col-md-6" style="align-items: center">
+                <select class="form-control" formControlName="u_name2">
+                    <option *ngFor="let u of uni" [value]="u.u_id">{{u.u_name}}</option>
+                </select>
+          </div>
+  </div>
+  <br>
+  <div>
+    <button class="btn btn-danger"  [disabled]="compareForm.invalid" (click)="compare()">COMPARE</button>
+  </div>
+</form>
+<br>
+<div class="container well"  *ngIf="show">
+<div class="table-responsive">
+<table class="table-bordered table">
+  <thead>
+  <tr>
+    <th><b>University</b></th>
+    <th><b>Location</b></th>
+    <th><b>Category</b></th>
+    <th><b>Rating</b></th>
+    <th><b>Courses</b></th>
+  </tr>
+</thead>
+  <tr *ngFor="let uni1 of uni1" >
+    <td>{{uni1.u_name}}</td>
+    <td>{{uni1.city}},{{uni1.s_name}} </td>
+    <td>{{uni1.category}} </td>
+    <td>{{uni1.rating}} </td>
+    <td ><span *ngFor="let c1 of c1">{{c1.c_name}},</span></td>
+  </tr>
+  <tr *ngFor="let uni2 of uni2">
+    <td>{{uni2.u_name}}</td>
+    <td>{{uni2.city}},{{uni2.s_name}} </td>
+    <td>{{uni2.category}} </td>
+    <td>{{uni2.rating}} </td>
+    <td ><span *ngFor="let c2 of c2">{{c2.c_name}},</span></td>
+  </tr>
+
+</table>
+</div>
+</div>
+</div>
+</section>

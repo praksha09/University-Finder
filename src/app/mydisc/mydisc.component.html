@@ -1,0 +1,24 @@
+<section class="section container">
+    <div class="col-sm-3"></div>
+    <div class="container col-sm-6" style="text-align: center;">
+  <div>
+    <button class="btn-lg btn-danger" routerLink='/discussion'>Start new Discussion</button>
+  </div>
+  <br>
+  <br>
+  
+    <div class="well" *ngIf="info==''">
+      No discussions yet
+      
+    </div>
+    <div class="well" style="text-align:left" *ngFor="let i of info">
+        <i style="margin-left:480px" class="fa fa-remove" (click)="remove(i)"></i>
+        <h5><b>{{i.type}}</b></h5>
+        <h5>{{i.message}}</h5>
+        
+      </div>
+    <div class="col-sm-3"></div>
+  </div>
+  
+  
+</section>

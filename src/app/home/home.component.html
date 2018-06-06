@@ -1,0 +1,50 @@
+<section class="container-fluid text-center section" id="heroarea">
+  <div class="heroarea-caption">
+    <h1 class="text-uppercase"> 
+
+      Find universities of your interest 
+      <h2>in India</h2>
+    </h1>
+   
+    <br>
+    <form [formGroup]="homeForm">
+    <div class="row container">
+      
+    <div class="col-sm-4">
+      <h3>Want do you want to study?</h3>
+        <select class="form-control input-lg" formControlName="c_id">
+            <option *ngFor="let c of course" [value]="c.c_id" >{{c.c_name}}</option>
+        </select>
+    </div>
+    <div class="col-sm-4">
+      <h3>From where?</h3>
+      <select class="form-control input-lg" formControlName="s_id">
+          <option *ngFor="let s of state" [value]="s.s_id" >{{s.s_name}}</option>
+      </select>
+    </div>
+   <br>
+   <br>
+   <br>
+    <div class="col-sm-2" >
+        <button class="btn-lg btn-primary"  (click)="submit()">SUBMIT</button>
+      </div>
+    </div>
+  </form>
+  </div>
+   
+</section>
+<!-- <div id="bannerBg">
+  <div id="containingDiv">
+              <div id="allinone_carousel_charming">
+                  
+                  <!-- <ul class="allinone_carousel_list">
+                     <li><img src="assets/images/university/uni2.jpg" alt="" class="img-responsive"/></li>
+                     <li><img src="assets/images/university/uni3.jpg" alt="" class="img-responsive"/></li>
+                     <li><img src="assets/images/university/uni4.jpg" alt="" class="img-responsive"/></li>                     
+                     <li><img src="assets/images/university/uni1.jpg" alt="" class="img-responsive"/></li>                      
+                  </ul>    
+            </div>
+  </div>
+  </div> --> 
+  
+

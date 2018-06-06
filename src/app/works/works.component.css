@@ -1,0 +1,13 @@
+.profile {
+    background-image: url("../../assets/images/book2.jpg");
+   color: #FFFFFF;
+   width:100%;
+   height:250px;
+   margin-top: -20px;
+   background-repeat: no-repeat;  
+   background-size:cover;
+    
+}
+.well{
+    background-color:white;
+}

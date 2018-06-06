@@ -1,0 +1,47 @@
+<div class="profile"> 
+  <div style="text-align: left; margin-left: 40px;" *ngFor="let i of info">
+<br>
+<br>
+    <h3 class="text-uppercase">{{i.f_name}} {{i.l_name}}</h3> 
+    <h4>{{i.dream_uni}} Aspirant</h4>   
+    <h4>Join @{{i.joining_year}}</h4>
+  </div>
+
+</div>
+
+<section class="section container">
+  <div class="col-sm-3 well">
+    <h4><i class="fa fa-filter">  Filter </i></h4> 
+    <ul> 
+   <li><a routerLink='/category'>Top Universities</a></li> 
+    <li><a routerLink='/rating'>Ranking</a></li> 
+  </ul>
+    <hr>    
+ </div>
+ <div class="col-sm-1"></div>
+  
+ <div class="col-sm-8 well" *ngFor="let i of info">
+    <h3>Profile & Academics</h3>
+    <br>
+    <div class="col-sm-3" style="text-align: center">
+    <i class="fa fa-bank"></i>
+    <h5><b>School</b></h5>
+    <h5>{{i.school_name}}</h5>
+  </div>
+  <div class="col-sm-3"  style="text-align: center">
+    <i class="fa fa-wpforms"></i><br>
+    <h5><b>Score</b></h5>
+    <h5>{{i.percentage}} %</h5>
+  </div> 
+  <div class="col-sm-3"  style="text-align: center">
+      <i class="fa fa-graduation-cap"></i><br>
+      <h5><b>Dream University</b></h5>
+      <h5>{{i.dream_uni}} </h5>
+  </div>
+  <div class="col-sm-3"  style="text-align: center">
+    <i class="fa fa-book"></i><br>
+    <h5><b>Interested Course</b></h5>
+    <h5>{{i.course}} </h5>
+  </div>
+  </div>
+</section>

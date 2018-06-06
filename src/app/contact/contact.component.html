@@ -1,0 +1,41 @@
+<section class="section container-fluid" id="contact">
+  <div class="section-title text-center text-uppercase">
+    <h2 class="underlined">Contact</h2>
+  </div>
+  
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+      <p><span class="glyphicon glyphicon-map-marker"></span> Surat,Gujarat</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +919408533299</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> praksha803@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+        <form [formGroup]="contactForm">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="name" formControlName="fname" placeholder="Name" type="text" required>
+          <b><div class="text-danger col-sm-4" *ngIf="contactForm.controls.fname.invalid && contactForm.controls.fname.touched">Enter Name</div></b>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="subject" formControlName="subject" placeholder="Subject" type="text" required>
+          <b><div class="text-danger col-sm-4" *ngIf="contactForm.controls.subject.invalid && contactForm.controls.subject.touched">Enter subject</div></b>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" formControlName="email" placeholder="Email" type="email" required>
+          <b><div class="text-danger" *ngIf="contactForm.controls.email.invalid && contactForm.controls.email.touched">Enter valid email</div></b>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" formControlName="message" placeholder="Comment" rows="5"></textarea><br>
+      <b><div class="text-danger col-sm-4" *ngIf="contactForm.controls.message.invalid && contactForm.controls.message.touched" style="border-color:red"></div></b>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit" (click)="onFormSubmit()">Send</button>
+        </div>
+      </div>
+    </form>
+    </div>
+</section>
+
+

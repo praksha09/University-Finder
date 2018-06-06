@@ -1,0 +1,27 @@
+<div class="profile">
+    <br>
+    <br>
+    <div class="section-title text-center text-uppercase">
+      <h3> Course Description</h3>
+    </div>
+    <div class="container row" style="margin-left:280px;">
+    <div id="custom-search-input col-sm-6">
+        <div class="input-group col-md-8">
+            <input type="text" class="form-control input-lg" [(ngModel)]="search" placeholder="Search" />
+        </div>
+    </div>
+  </div>
+  <br><br>
+  
+  </div>
+  <section class="section container">
+         
+    <div class="container well" *ngFor="let c of str | filter:search">
+      <h4><b>{{c.c_name}}</b></h4>
+      <h4>Duration: {{c.duration}} years</h4>
+          <p>{{c.details}}</p>
+     </div>
+     
+  
+</section>
+

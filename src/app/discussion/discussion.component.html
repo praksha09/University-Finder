@@ -1,0 +1,78 @@
+
+<section class="section container-fluid" id="contact">
+  <div class="section-title text-center text-uppercase">
+    <h3 class="underlined">Discussions</h3>
+  </div>
+  <div class="container">
+  <div class="col-sm-3 well">
+    <h4><i class="fa fa-filter">  Filter </i></h4>  
+    <hr>
+    <form  [formGroup]="filterForm">
+    <h4>Type</h4>
+    <div class="checkbox" *ngFor="let t of type" >
+    <label><input type="checkbox" formControlName="type" [value]="t.type_id"> {{t.type}}</label>
+    </div>
+    <hr>
+    <button class="btn btn-danger">Apply</button>
+  </form>
+    
+ </div>
+ <div class="col-sm-1"></div>
+ <div class="col-sm-6">
+  <div class="container2"> 
+    <form [formGroup]="typeForm">
+    <div class="well">
+      <h5>Discussion Type:</h5>
+      <select class="form-control" formControlName="type_id">
+        <option *ngFor="let t of type" [value]="t.type_id">{{t.type}}</option>
+        </select>
+        <b><div class="text-danger col-sm-4" *ngIf="typeForm.controls.type_id.invalid && typeForm.controls.type_id.touched">Select Type</div></b>
+    <br>
+        <textarea spellcheck="false" rows="3" formControlName="message" class="form-control" placeholder="Write here..."></textarea> 
+    <br>     
+      <button class="btn btn-danger" (click)="onSubmit()" >Submit</button>
+    </div>
+  </form>
+  </div>
+  <br>
+  <div class="container2">
+      <div class="well" >
+    <span  *ngFor="let d1 of dis">
+      <span *ngFor="let d of d1">
+       <span *ngIf="d.dis_id==-1">
+          
+        <h5><a routerLink='/user'>{{d.f_name}} {{d.l_name}}</a></h5>
+       <h5><b>{{d.type}}</b></h5>
+        <h5>{{d.message}}</h5>
+        <hr>
+        <h5><u>Comments:</u></h5>
+       </span>
+         <span *ngIf="!(d.dis_id==-1)">
+          <h6><b>{{d.f_name}} {{d.l_name}}</b></h6>
+          <h6>{{d.message}} </h6>
+           
+        </span>
+        
+        </span>
+        <br>
+        <div>
+            <form [formGroup]="replyForm">
+            <div><label>Reply:</label></div>
+            <div class="container col-sm-10">
+            <input type="text" class="form-control" formControlName="message" placeholder="reply here">
+            </div>
+            <div class="col-sm-2">
+            <button class="btn btn-danger" (click)="Submit(d1)" >Go</button>
+          </div>          
+      </form> 
+      <br>     
+    </div>
+    <br>
+    <br>
+    </span>
+  </div>
+        
+      </div>
+  </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+<div class="profile">
+        <br>
+        <br>
+        <div class="section-title text-center text-uppercase">
+          <h3>Similar Profiles</h3>
+        </div>
+        <div class="container row" style="margin-left:280px;">
+        <div id="custom-search-input col-sm-6">
+            <div class="input-group col-md-8">
+                <input type="text" class="form-control input-lg" [(ngModel)]="search" placeholder="Search" />
+            </div>
+        </div>
+      </div>
+      <br><br>
+    </div>
+<section class="section container">
+
+        <div class="container">
+         <div class="row">      
+            <div class="col-sm-3" *ngFor="let i of info | filter:search">
+                <div class="well">
+                <h4><a>{{i.f_name}} {{i.l_name}}</a></h4>
+                <h4>Score:{{i.percentage}}%</h4>
+                <h4>{{i.dream_uni}} Aspirant</h4>
+            </div>
+            </div>
+            <br>
+        </div>
+    </div>
+</section>

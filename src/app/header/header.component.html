@@ -1,0 +1,72 @@
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid"> 
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#inverseNavbar1">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+      <a class="navbar-brand" href="#">
+      
+<!--      	the site logo-->
+      	<img src="assets/images/logo.png" alt="site logo" />
+      	
+<!--      	site name ( keep span )-->
+      	<span>You</span>Need
+      </a>
+      	</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="inverseNavbar1">
+<!--     search form-->
+      
+<!--      end search form-->
+     
+      <ul class="nav navbar-nav navbar-right text-uppercase">
+        
+        <!--       if you want to customize the navigation menu use the list bellow-->
+        <li><a routerLink='/home'>home</a></li>
+        <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown">University <i class="fa fa-caret-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a routerLink='/category'><i class="fa fa-table" style="color: white"></i>  Categories</a></li>
+            <li><a routerLink='/compare'><i class="fa fa-balance-scale" style="color:white"></i>  Compare Universities</a></li>
+            <li><a routerLink='/rating'><i class="fa fa-star-half-o" style="color:white"></i>  Ratings</a></li>
+            <li><a routerLink='/works'><i class=" fa fa-book" style="color:white"></i>  Course</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown">Profile <i class="fa fa-caret-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink='/similar' ><i class="fa fa-group fa-fw" style="color: white"></i> Similar Profile</a></li>
+          <li><a routerLink='/find' ><i class="fa fa-search fa-fw" style="color: white"></i> Find Profile</a></li>
+        </ul>
+        </li>s
+        
+        <li><a routerLink='/discussion'>Discussion</a></li>
+        <li><a routerLink='/contact'>contact</a></li>
+        <li *ngIf="show"><a routerLink='/login' class="active">Login</a></li>
+        <!-- /.dropdown -->
+        <li class="dropdown" *ngIf="!show">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
+                <i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-user">
+                <li><a routerLink='/profile'><i class="fa fa-edit fa-fw"></i> Edit Profile</a>
+                </li>
+                <li><a routerLink='/user'><i class="fa fa-user fa-fw"></i> My Profile</a>
+                </li> 
+                <li><a routerLink='/mydisc'><i class="fa fa-comments fa-fw"></i> My Discussions</a>
+                </li>                
+                <li><a routerLink='/logout'><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                </li>
+            </ul>
+        </li>
+        <!--        end menu list-->
+        
+      </ul>
+    </div>
+    <!-- /.navbar-collapse --> 
+  </div>
+  <!-- /.container-fluid --> 
+</nav>
+

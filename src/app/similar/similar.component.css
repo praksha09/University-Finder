@@ -1,0 +1,12 @@
+.well{
+    background-color: white;
+}
+.profile{
+    background-image: url('../../assets/images/similar.jpg');
+    color: #FFFFFF;
+   width:100%;
+   height:220px;
+   margin-top: -20px;
+   background-repeat: no-repeat;  
+   background-size:cover;
+}

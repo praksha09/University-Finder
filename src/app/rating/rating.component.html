@@ -1,0 +1,61 @@
+<div class="profile">
+    <br>
+    <br>
+    <div class="section-title text-center text-uppercase">
+      <h3>Ratings</h3>
+    </div>
+    <div class="container row" style="margin-left:280px;">
+    <div id="custom-search-input col-sm-6">
+        <div class="input-group col-md-8">
+            <input type="text" class="form-control input-lg" [(ngModel)]="search" placeholder="Search" />
+        </div>
+    </div>
+  </div>
+  <br><br>
+   </div>
+
+<section class="section container">
+      <div class="col-sm-12">
+         
+          <div *ngFor="let u of uni | filter:search">
+              <div class="media ">
+                <div class="media-left media-top col-sm-12">
+                  <img src="../../assets/images/icon/{{u.icon}}" class="media-object col-sm-4" style="width:100px;height:50px;">
+                  
+                  <h5 class="media-heading col-sm-6">{{u.u_name}}</h5>
+                  <h5 class="col-sm-2">{{u.category}}</h5>
+                  <h5 class="col-sm-1">{{u.rating}}</h5>
+                  <span class="stars alignright">
+                     <span [style.width.%]="getStars(u.rating)"></span>
+                </span>
+                </div>
+              </div>
+              <hr>
+              </div>
+            </div>
+        
+
+        <!-- <div class="col-sm-4" style="background-color:azure">
+          <h3 style="text-align: center">You Can Rate Here</h3>
+          <br>
+          <form>
+            <div>
+              <input type="text" placeholder="college name" class="form-control">
+            </div>
+            <div>
+              <h3>
+                Rating
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i>
+                <i class="fa fa-star checked"></i> 
+              </h3> 
+            </div>
+            <br>
+            <div>
+                  <input type="button" value="RATE" class="btn btn-danger" >
+                </div>
+          </form>
+        </div> -->
+</section>

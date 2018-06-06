@@ -1,0 +1,27 @@
+.profile {
+	 background-image: url("../../assets/images/university.jpg");
+	color: #FFFFFF;
+	width:100%;
+	height:220px;
+	margin-top: -20px;
+	background-repeat: no-repeat;  
+	background-size:cover;
+	 
+}
+.well
+{
+	background-color: white;
+}
+.fa{
+	color:maroon;
+	font-size: 50px;
+}
+.fa-book .fa-building{
+	font-size: 75px;
+	color:maroon
+
+}
+.fa-filter{
+	font-size: 20px;
+	color: black;
+}
