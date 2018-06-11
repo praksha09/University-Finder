@@ -4,6 +4,7 @@ import { Validators, FormControl,FormGroup ,Form} from '@angular/forms';
 import { getLocaleDateFormat } from '@angular/common/src/i18n/locale_data_api';
 import { DatePipe } from '@angular/common';
 import { Common } from '../common';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
@@ -12,7 +13,7 @@ import { Common } from '../common';
 export class ProfileComponent implements OnInit {
 
   data:any;
-  constructor(private http:Http,private datePipe: DatePipe) { }
+  constructor(private http:Http,private datePipe: DatePipe,private router:Router) { }
 
   profileForm:FormGroup;
   hasSubmitted:boolean;
@@ -44,12 +45,14 @@ export class ProfileComponent implements OnInit {
     if(this.profileForm.invalid)
       alert("Fill all Details Properly!");
     else{
+      this.profileForm.controls.user_id.setValue(this.data);
       let info=this.profileForm.value;
 
       this.http.post(Common.profile,info).subscribe(( res:Response) => {
    
            console.log(res);
-     })      
+     }) 
+          this.router.navigate(['/user']);
     }
   }
 
@@ -96,6 +99,7 @@ export class ProfileComponent implements OnInit {
         
               
      })
+     this.router.navigate(['/user']);
     }
   }
 
