@@ -13,26 +13,28 @@
         <i class="fa fa-hand-o-down" aria-hidden="true"></i>
       </h2>
       <form class="form-horizontal" [formGroup]="signupForm" (ngSubmit)="onFormSubmit()">
+          <b><div class="text-danger" *ngIf="signupForm.controls.f_name.invalid && signupForm.controls.f_name.touched">Required Field</div></b>
         <div class="pom-agile">
           <span class="fa fa-user-o" aria-hidden="true"></span>
-          <input placeholder="Firstname" formControlName="f_name" class="user" type="text">
-          <b><div class="text-danger" *ngIf="signupForm.controls.f_name.invalid && signUpForm.controls.f_name.touched">Required Field</div></b>
+          <input placeholder="Firstname" formControlName="f_name" class="user" type="text">  
         </div>
+
+        <b><div class="text-danger" *ngIf="signupForm.controls.l_name.invalid && signupForm.controls.l_name.touched">Required Field</div></b>
         <div class="pom-agile">
             <span class="fa fa-user-o" aria-hidden="true"></span>
             <input placeholder="Lastname" formControlName="l_name" class="user" type="text">
-            <b><div class="text-danger" *ngIf="signupForm.controls.l_name.invalid && signUpForm.controls.l_name.touched">Required Field</div></b>
-          </div>
+         </div>
+
+         <b><div class="text-danger" *ngIf="signupForm.controls.email.invalid && signupForm.controls.email.touched">Invalid Email</div></b>
         <div class="pom-agile">
               <span class="fa fa-user-o" aria-hidden="true"></span>
               <input placeholder="Email" formControlName="email" class="user" type="text">
-              <b><div class="text-danger" *ngIf="signupForm.controls.email.invalid && signUpForm.controls.email.touched">Invalid Email</div></b>
           </div>
           
+          <b><div class="text-danger" *ngIf="signupForm.controls.pwd.invalid && signupForm.controls.pwd.touched">Required Field</div></b>
         <div class="pom-agile">
           <span class="fa fa-key" aria-hidden="true"></span>
           <input placeholder="Password" formControlName="pwd" class="pass" type="password">
-          <b><div class="text-danger" *ngIf="signupForm.controls.pwd.invalid && signUpForm.controls.pwd.touched">Required Field</div></b>
         </div>
         
         <div class="right-w3l">
